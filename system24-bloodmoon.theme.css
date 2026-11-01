@@ -1,0 +1,65 @@
+/**
+ * @name system24 bloodmoon
+ * @description system24 with the BloodMoon colors (from the spicetify "text" theme), amoled true black.
+ * @author refact0r (system24), colors adapted
+ * @version 2.1.0
+*/
+
+@import url('https://refact0r.github.io/system24/build/system24.css');
+
+body {
+    /* system24 uses 300 and -0.05ch; regular weight and normal spacing read better with astigmatism */
+    font-weight: 400;
+    letter-spacing: 0;
+
+    --label-color: #a0787e; /* panel labels */
+}
+
+:root {
+    /* text colors */
+    --text-0: var(--bg-4); /* text on colored elements */
+    --text-1: #f0e6e7; /* other normally white text */
+    --text-2: #e2d6d7; /* headings and important text */
+    --text-3: #cbbdbf; /* normal text */
+    --text-4: #b3a1a4; /* icon buttons and channels */
+    --text-5: #958184; /* muted channels/chats and timestamps */
+
+    /* background and dark colors (amoled: panels are true black) */
+    --bg-1: #361519; /* dark buttons when clicked */
+    --bg-2: #2b1115; /* dark buttons */
+    --bg-3: #0d0a0b; /* spacing, secondary elements */
+    --bg-4: #000000; /* main background color */
+    --hover: #2b111580; /* channels and buttons when hovered */
+    --active: #2b1115; /* channels and buttons when clicked or selected */
+    --active-2: #361519; /* extra state for transparent buttons */
+
+    /* accent colors */
+    --accent-1: #f5b0ba; /* links and other accent text */
+    --accent-2: #ff5c74; /* small accent elements */
+    --accent-3: #ff3d5c; /* accent buttons */
+    --accent-4: #e8344f; /* accent buttons when hovered */
+    --accent-5: #cc2b44; /* accent buttons when clicked */
+    --accent-new: #ff6b7a; /* stuff that's normally red like mute/deafen buttons */
+
+    /* border colors */
+    --border: #4a2b31; /* general normal border color */
+    --border-hover: var(--accent-2); /* border color of panels when hovered */
+}
+
+/* midnight's "#app-mount .container__9293f { border-bottom: none }" also strips the bottom
+   border of title bars that are drawn as panels (friends, message requests...) */
+#app-mount .container__133bf > .container__9293f,
+#app-mount .container_f391e3 > .container__9293f,
+#app-mount .homeWrapper__0920e > .container__9293f,
+#app-mount .container__01ae2 > .container__9293f,
+#app-mount .container_fb64c9 > .container__9293f {
+    border-bottom: var(--border-thickness) solid var(--border);
+    transition: border-color var(--border-hover-transition);
+}
+#app-mount .container__133bf > .container__9293f:hover,
+#app-mount .container_f391e3 > .container__9293f:hover,
+#app-mount .homeWrapper__0920e > .container__9293f:hover,
+#app-mount .container__01ae2 > .container__9293f:hover,
+#app-mount .container_fb64c9 > .container__9293f:hover {
+    border-color: var(--border-hover);
+}
